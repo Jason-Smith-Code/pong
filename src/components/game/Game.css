@@ -5,3 +5,9 @@
     border: 1px solid black;
     position: relative;
 }
+
+#screen {
+    width: 100%;
+    height: 100vh;
+    
+}

@@ -20,14 +20,17 @@ export const Game = () => {
   }, []);
 
   const handleMouseMove = (event) => {
-    setCoords(event.clientX - event.target.offsetLeft);
+    // 100 is half the current bar width
+    setCoords(event.clientX - (event.target.offsetLeft + 100));
   };
 
   return (
-    <div id="game-container" onMouseMove={handleMouseMove}>
-      <Opponent />
-      <Ball />
-      <Player xpos={coords} />
+    <div id="screen" onMouseMove={handleMouseMove}>
+      <div id="game-container">
+        <Opponent />
+        <Ball />
+        <Player xpos={coords} />
+      </div>
     </div>
   );
 };
