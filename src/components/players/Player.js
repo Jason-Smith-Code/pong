@@ -2,29 +2,28 @@ import React, { useEffect, useRef } from "react";
 import "./Players.css";
 
 export const Player = ({ xpos }) => {
-  // When hovernig directly over the bar, it causes bugs
-
   // collision detection
+
+  // https://stackoverflow.com/questions/9768291/check-collision-between-certain-divs
+
   // velocity
 
-  const inputEl = useRef();
-  console.log(inputEl);
+  const player = useRef();
   useEffect(() => {
-    if (inputEl != null) {
-      inputEl.current.style.left = `${xpos}px`;
+    if (player != null) {
+      player.current.style.left = `${xpos}px`;
       if (xpos < 0) {
-        inputEl.current.style.left = "0px";
+        player.current.style.left = "0px";
       }
       if (xpos > 598) {
-        inputEl.current.style.left = "598px";
+        player.current.style.left = "598px";
       }
     }
   }, [xpos]);
 
   return (
     <>
-      <p>Rendered from Player:{xpos}</p>
-      <div ref={inputEl} id="Player" className="bar"></div>
+      <div ref={player} id="Player" className="bar"></div>
     </>
   );
 };

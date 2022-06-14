@@ -4,10 +4,33 @@
     margin: auto;
     border: 1px solid black;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #screen {
     width: 100%;
     height: 100vh;
-    
+}
+
+button#start {
+    padding: 10px 20px;
+    text-transform:uppercase;
+    background: none;
+    border: 1px solid black;
+    transition: 250ms;
+}
+
+button#start:hover {
+    background-color: green;
+}
+
+/* DELETE */
+
+#metrics {
+    position: absolute;
+    top: 10px;
+    left: 10px
 }
